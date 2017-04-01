@@ -9,7 +9,21 @@ set expandtab
 " set line numbers
 set number
 " Set colorscheme
-colorscheme apprentice
+colorscheme jellybeans 
+"colorscheme monokai
+"colorscheme apprentice
+syntax enable
+
+" Autocomplete braces
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+" autocomplete parentheses
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     ( 
+inoremap ()     () 
 
 
 " VUNDLE SETUP
@@ -37,7 +51,6 @@ Plugin 'itchyny/lightline.vim'
 
 " add YouCompleteMe plugin
 Plugin 'Valloric/YouCompleteMe'
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
