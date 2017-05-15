@@ -1,18 +1,34 @@
 " MAIN SETUP
 filetype plugin indent on
+
 " show existing tab with 4 spaces width
 set tabstop=4
+
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
+
 " On pressing tab, insert 4 spaces
 set expandtab
+
 " set line numbers
 set number
+
+" enable syntax highlighting
+syntax enable
+
+autocmd ColorScheme * highlight Normal ctermbg=235
 " Set colorscheme
-colorscheme jellybeans 
+"colorscheme jellybeans 
 "colorscheme monokai
 "colorscheme apprentice
-syntax enable
+colorscheme spring-night
+
+" change background color for crayon
+"autocmd ColorScheme * highlight Normal ctermbg=234
+"colorscheme crayon
+
+" transparent background
+"hi Normal guibg=NONE ctermbg=NONE
 
 " Autocomplete braces
 inoremap {      {}<Left>
