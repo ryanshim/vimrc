@@ -16,12 +16,15 @@ set number
 " enable syntax highlighting
 syntax enable
 
-autocmd ColorScheme * highlight Normal ctermbg=235
+"autocmd ColorScheme * highlight Normal ctermbg=235
+set t_Co=256
 " Set colorscheme
 "colorscheme jellybeans 
 "colorscheme monokai
 "colorscheme apprentice
-colorscheme spring-night
+"colorscheme spring-night
+"colorscheme gotham256
+colorscheme gotham
 
 " change background color for crayon
 "autocmd ColorScheme * highlight Normal ctermbg=234
@@ -41,6 +44,9 @@ inoremap (<CR>  (<CR>)<Esc>O
 inoremap ((     ( 
 inoremap ()     () 
 
+" Tab navigation like Firefox.
+nnoremap <C-S-tab> :bprevious<CR>
+nnoremap <C-tab>   :bnext<CR>
 
 " VUNDLE SETUP
 set nocompatible              " be iMproved, required
@@ -63,11 +69,26 @@ Plugin 'scrooloose/nerdtree'
 autocmd vimenter * NERDTree     " auto start nerdTree
 
 " add lightline plugin
-Plugin 'itchyny/lightline.vim'
+"Plugin 'itchyny/lightline.vim'
+
+" add airline plugin
+Plugin 'vim-airline/vim-airline'
+" add airline themes plugin
+Plugin 'vim-airline/vim-airline-themes'
 
 " add YouCompleteMe plugin
 Plugin 'Valloric/YouCompleteMe'
 
+" add enhanced c++ syntax highlighting
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_theme='jellybeans'
+"let g:cpp_class_scope_highlight = 1
+"let g:cpp_member_variable_highlight = 1
+"let g:cpp_class_decl_highlight = 1
